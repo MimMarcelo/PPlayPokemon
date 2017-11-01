@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="0dp"
+    >
+
+    <EditText
+        android:id="@+id/edtInputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="end|bottom"
+        android:textSize="@dimen/texto_padrao"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/txtInputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:labelFor="@+id/edtInputText"
+        android:textSize="@dimen/texto_label_padrao"
+        android:paddingStart="@dimen/label_padding_left"
+        android:paddingTop="@dimen/label_padding_top"
+        android:text="hello" />
+</RelativeLayout>
