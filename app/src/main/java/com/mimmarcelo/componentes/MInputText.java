@@ -20,13 +20,7 @@ public class MInputText extends LinearLayout {
     private EditText edtInputText;
 
     private String _placeholder;
-//    private OnClickListener edtClique = new OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            EditText e = (EditText)view;
-//            e.setHint("");
-//        }
-//    };
+
     private OnFocusChangeListener edtChangeListener = new OnFocusChangeListener() {
         @Override
         public void onFocusChange(View view, boolean b) {
@@ -72,5 +66,21 @@ public class MInputText extends LinearLayout {
         edtInputText.setOnFocusChangeListener(edtChangeListener);
 
         this.addView(v);
+    }
+
+    public void setValue(String textoInput){
+        edtInputText.setText(textoInput);
+    }
+
+    public void setText(String textoLabel){
+        txtInputText.setText(textoLabel);
+    }
+
+    public String getValue(){
+        return edtInputText.getText().toString().trim();
+    }
+
+    public String getText(){
+        return txtInputText.getText().toString().trim();
     }
 }
