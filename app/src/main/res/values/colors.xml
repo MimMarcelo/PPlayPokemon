@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="corPadrao">#000000</color>
+    <color name="corPadraoClara">#50506F</color>
+    <color name="corPadraoTransparente">#6F000000</color>
+
+    <color name="corPadraoInverso">#FFFFFF</color>
+    <color name="corPadraoClaraInverso">#CFCFDF</color>
+
+    <color name="colorPrimary">#00005F</color>
+    <color name="colorPrimaryDark">#00003F</color>
+    <color name="colorAccent">#9FCFFF</color>
 </resources>

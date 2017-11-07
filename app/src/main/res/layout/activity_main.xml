@@ -8,6 +8,7 @@
     tools:context="com.mimmarcelo.pplaypokmon.MainActivity">
 
     <view
+        android:id="@+id/itxNome"
         class="com.mimmarcelo.componentes.MInputText"
         id="@+id/view2"
         layout_weight="1"
@@ -17,6 +18,7 @@
         app:placeholder="Informe seu nome" />
 
     <view
+        android:id="@+id/itxSenha"
         class="com.mimmarcelo.componentes.MInputText"
         id="@+id/view4"
         layout_weight="1"

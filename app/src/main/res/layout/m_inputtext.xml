@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="end|bottom"
-        android:textSize="@dimen/texto_padrao"
         android:inputType="textPersonName" />
 
     <TextView
@@ -21,7 +20,6 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:labelFor="@+id/edtInputText"
-        android:textSize="@dimen/texto_label_padrao"
         android:paddingStart="@dimen/label_padding_left"
         android:paddingTop="@dimen/label_padding_top"
         android:text="hello" />
