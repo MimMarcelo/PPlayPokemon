@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mimmarcelo.pplaypokmon.MainActivity">
+    tools:context="com.mimmarcelo.pplaypokemon.MainActivity">
 
     <view
         android:id="@+id/itxNome"
@@ -14,8 +14,8 @@
         layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:label="Nome"
-        app:placeholder="Informe seu nome" />
+        app:mLabel="Nome"
+        app:mPlaceholder="Informe seu nome" />
 
     <view
         android:id="@+id/itxSenha"
@@ -24,6 +24,23 @@
         layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:label="Senha"
-        app:placeholder="Informe sua senha" />
+        app:mLabel="Senha"
+        app:mPlaceholder="Informe sua senha"
+        app:mSenha="true" />
+
+    <Spinner
+        android:id="@+id/spnPokemons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/lstPokemons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ExpandableListView
+        android:id="@+id/elsPokemons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

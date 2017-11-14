@@ -3,13 +3,14 @@ package com.mimmarcelo.componentes;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.mimmarcelo.pplaypokmon.R;
+import com.mimmarcelo.pplaypokemon.R;
 
 /**
  * Created by Marcelo Júnior on 31/10/2017.
@@ -58,10 +59,14 @@ public class MInputText extends LinearLayout {
         final TypedArray a = getContext().obtainStyledAttributes(
                 attrs, R.styleable.MInputText, defStyleAttr, 0);
 
-        txtInputText.setText(a.getString(R.styleable.MInputText_label));
-        edtInputText.setText(a.getString(R.styleable.MInputText_valor));
-        _placeholder = a.getString(R.styleable.MInputText_placeholder);
+        txtInputText.setText(a.getString(R.styleable.MInputText_mLabel));
+
+        _placeholder = a.getString(R.styleable.MInputText_mPlaceholder);
         edtInputText.setHint(_placeholder);
+        edtInputText.setText(a.getString(R.styleable.MInputText_mValor));
+        if(a.getBoolean(R.styleable.MInputText_mSenha, false)){
+            edtInputText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        }
 
         edtInputText.setOnFocusChangeListener(edtChangeListener);
 

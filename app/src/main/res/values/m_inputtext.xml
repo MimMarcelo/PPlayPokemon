@@ -1,7 +1,8 @@
 <resources>
     <declare-styleable name="MInputText">
-        <attr name="label" format="string" />
-        <attr name="placeholder" format="string" />
-        <attr name="valor" format="string" />
+        <attr name="mLabel" format="string" />
+        <attr name="mPlaceholder" format="string" />
+        <attr name="mValor" format="string" />
+        <attr name="mSenha" format="boolean" />
     </declare-styleable>
 </resources>
