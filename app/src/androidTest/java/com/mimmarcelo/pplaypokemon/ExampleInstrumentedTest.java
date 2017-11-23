@@ -1,4 +1,4 @@
-package com.mimmarcelo.pplaypokmon;
+package com.mimmarcelo.pplaypokemon;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
