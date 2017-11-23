@@ -10,12 +10,21 @@ import java.util.Random;
 
 public class Pokemon implements MItemList {
     private int id;
-    private EEspecie especie;
+    private int nivel;
+    private int experiencia;
+    private boolean evolui;
     private String nome;
+    private EEspecie especie;
 
     public Pokemon(EEspecie especie){
         this.especie = especie;
+        this.evolui = true;
         this.nome = "";
+    }
+
+    public Pokemon(EEspecie especie, int nivel){
+        this(especie);
+        this.nivel = nivel;
     }
 
     public EEspecie getEspecie() {
@@ -37,20 +46,46 @@ public class Pokemon implements MItemList {
         return this.nome.isEmpty()? this.especie.getNome(): this.nome;
     }
 
+    public int getNivel() {
+        return nivel;
+    }
+
+    public int getExperiencia() {
+        return experiencia;
+    }
+
+    public boolean isEvolui() {
+        return evolui;
+    }
+
+    public void setEvolui(boolean evolui) {
+        this.evolui = evolui;
+    }
+
     public void evoluir() {
-        if(this.especie.getEvolucoes().size() == 1) {
+        if (this.especie.getEvolucoes().size() == 1) {
             this.especie = this.especie.getEvolucoes().get(0);
-        }
-        else if(this.especie.getEvolucoes().size() > 1){
+        } else if (this.especie.getEvolucoes().size() > 1) {
             Random random = new Random();
             this.especie = this.especie.getEvolucoes().get(random.nextInt(this.especie.getEvolucoes().size()));
         }
-
     }
 
     public void evoluir(EEspecie especie) {
         if(this.especie.getEvolucoes().contains(especie)){
             this.especie = especie;
+        }
+    }
+
+    public void addExperiencia(int xp){
+        if(xp > 0){
+            if((this.experiencia + xp) >= (this.nivel * 100)){
+                this.experiencia = (this.experiencia + xp) - (this.nivel * 100);
+                this.nivel++;
+            }
+            else{
+                this.experiencia += xp;
+            }
         }
     }
 }
