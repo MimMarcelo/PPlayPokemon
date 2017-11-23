@@ -34,22 +34,22 @@ public class MainActivity extends AppCompatActivity {
         ETipo.values();
         ArrayList<MItemList> pokemons1 = new ArrayList<>();
         Collections.addAll(pokemons1, ETipo.values());
-//        pokemons1.add(new Pokemon(Especie.BULBASAUR));
-//        pokemons1.add(new Pokemon(Especie.IVYSAUR));
-//        pokemons1.add(new Pokemon(Especie.VENOSAUR));
+//        pokemons1.add(new Pokemon(EEspecie.BULBASAUR));
+//        pokemons1.add(new Pokemon(EEspecie.IVYSAUR));
+//        pokemons1.add(new Pokemon(EEspecie.VENOSAUR));
 
         MListAdapter adapter = new MListAdapter(this, pokemons1);
         lstPokemons.setAdapter(adapter);
         spnPokemons.setAdapter(adapter);
 
         ArrayList<MItemList> pokemons2 = new ArrayList<>();
-//        pokemons2.add(new Pokemon(Especie.CHARMANDER));
-//        pokemons2.add(new Pokemon(Especie.CHARMILION));
-//        pokemons2.add(new Pokemon(Especie.CHARIZARD));
+//        pokemons2.add(new Pokemon(EEspecie.CHARMANDER));
+//        pokemons2.add(new Pokemon(EEspecie.CHARMILION));
+//        pokemons2.add(new Pokemon(EEspecie.CHARIZARD));
 
         //Map<MItemList, ArrayList<MItemList>> dados = new HashMap<>();
-//        dados.put(new Pokemon(Especie.VENOSAUR), pokemons1);
-//        dados.put(new Pokemon(Especie.CHARIZARD), pokemons2);
+//        dados.put(new Pokemon(EEspecie.VENOSAUR), pokemons1);
+//        dados.put(new Pokemon(EEspecie.CHARIZARD), pokemons2);
         //elsPokemons.setAdapter(new MListExpandableAdapter(this, dados));
     }
 }
