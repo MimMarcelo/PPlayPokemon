@@ -19,11 +19,12 @@ public class Pokemon {
     com.mimmarcelo.classes.Pokemon p4;
 
     public Pokemon(){
-        p1 = new com.mimmarcelo.classes.Pokemon(EEspecie.ABRA);
-        p2 = new com.mimmarcelo.classes.Pokemon(EEspecie.DRAGONITE);
-        p3 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE);
-        p4 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE);
+        p1 = new com.mimmarcelo.classes.Pokemon(EEspecie.ABRA, 5);
+        p2 = new com.mimmarcelo.classes.Pokemon(EEspecie.DRAGONITE, 36);
+        p3 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE, 8);
+        p4 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE, 6);
     }
+
     @Test
     public void evoluir() {
         p1.evoluir();
@@ -36,5 +37,21 @@ public class Pokemon {
                 (EEspecie.FLAREON == p3.getEspecie()));
         p4.evoluir(EEspecie.FLAREON);
         assertEquals(EEspecie.FLAREON, p4.getEspecie());
+    }
+
+    @Test
+    public void addExperiencia(){
+        p1.addExperiencia(600);
+        assertEquals(100, p1.getExperiencia());
+        assertEquals(6, p1.getNivel());
+        p2.addExperiencia(600);
+        assertEquals(600, p2.getExperiencia());
+        assertEquals(36, p2.getNivel());
+        p3.addExperiencia(600);
+        assertEquals(600, p3.getExperiencia());
+        assertEquals(8, p3.getNivel());
+        p4.addExperiencia(600);
+        assertEquals(0, p4.getExperiencia());
+        assertEquals(7, p4.getNivel());
     }
 }
