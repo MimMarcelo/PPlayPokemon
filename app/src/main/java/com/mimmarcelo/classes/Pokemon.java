@@ -12,9 +12,11 @@ public class Pokemon implements MItemList {
     private int id;
     private int nivel;
     private int experiencia;
+    private int hpAtual;
     private boolean evolui;
     private String nome;
     private EEspecie especie;
+    private ETecnica tecnica;
 
     public Pokemon(EEspecie especie){
         this.especie = especie;
@@ -43,7 +45,7 @@ public class Pokemon implements MItemList {
 
     @Override
     public String getNome() {
-        return this.nome.isEmpty()? this.especie.getNome(): this.nome;
+        return this.nome.isEmpty()? this.especie.getNome(): (this.nome+" ("+this.especie.getNome()+")");
     }
 
     public int getNivel() {
@@ -62,6 +64,10 @@ public class Pokemon implements MItemList {
         this.evolui = evolui;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
     public void evoluir() {
         if (this.especie.getEvolucoes().size() == 1) {
             this.especie = this.especie.getEvolucoes().get(0);
@@ -77,15 +83,22 @@ public class Pokemon implements MItemList {
         }
     }
 
-    public void addExperiencia(int xp){
-        if(xp > 0){
-            if((this.experiencia + xp) >= (this.nivel * 100)){
+    public void addExperiencia(int xp) {
+        if (xp > 0) {
+            if ((this.experiencia + xp) >= (this.nivel * 100)) {
                 this.experiencia = (this.experiencia + xp) - (this.nivel * 100);
                 this.nivel++;
-            }
-            else{
+            } else {
                 this.experiencia += xp;
             }
         }
+    }
+
+    public int getHpTotal(){
+        return ((this.especie.getForca()+this.especie.getResistencia()+this.especie.getVelocidade())/2)*this.nivel;
+    }
+
+    public int getHpAtual() {
+        return this.hpAtual;
     }
 }

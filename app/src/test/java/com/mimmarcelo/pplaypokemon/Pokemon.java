@@ -40,7 +40,7 @@ public class Pokemon {
     }
 
     @Test
-    public void addExperiencia(){
+    public void addExperiencia() {
         p1.addExperiencia(600);
         assertEquals(100, p1.getExperiencia());
         assertEquals(6, p1.getNivel());
@@ -53,5 +53,17 @@ public class Pokemon {
         p4.addExperiencia(600);
         assertEquals(0, p4.getExperiencia());
         assertEquals(7, p4.getNivel());
+    }
+
+    public void testaNome(){
+        assertEquals(EEspecie.ABRA.getNome(), p1.getNome());
+        String nome = "Cabuloso";
+        p1.setNome(nome);
+        assertEquals(nome+" ("+EEspecie.ABRA.getNome()+")", p1.getNome());
+    }
+
+    @Test
+    public void testaHp(){
+        assertEquals(12, p1.getHpAtual());
     }
 }

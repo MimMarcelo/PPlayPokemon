@@ -203,4 +203,16 @@ public enum EEspecie {
     public int getNivelEvolucao() {
         return nivelEvolucao;
     }
+
+    public int getForca() {
+        return this.forca;
+    }
+
+    public int getResistencia() {
+        return this.resistencia;
+    }
+
+    public int getVelocidade() {
+        return this.velocidade;
+    }
 }
