@@ -24,6 +24,7 @@ public enum EStatus {
     ATORMENTADO(13, "Atormentado", "O pokémon atormentado não pode usar o mesmo movimento duas vezes seguidas"),
     CURA(14, "Cura", "O pokémon restaura HP"),
     ENDURECIDO(15, "Endurecido", "O pokémon sempre vai sobreviver ao próximo ataque com pelo menos 1 de vida"),
+    ABATIDO(16, "Abatido", "O pokémon está for a de combate"),
     ;
 
     private int id;

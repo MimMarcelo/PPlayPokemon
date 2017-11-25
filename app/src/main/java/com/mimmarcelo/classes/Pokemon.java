@@ -14,14 +14,18 @@ public class Pokemon implements MItemList {
     private int experiencia;
     private int hpAtual;
     private boolean evolui;
+    private boolean comProfessor;
     private String nome;
     private EEspecie especie;
     private ETecnica tecnica;
+    private EStatus status;
 
     public Pokemon(EEspecie especie){
         this.especie = especie;
         this.evolui = true;
+        this.comProfessor = false;
         this.nome = "";
+        this.status = EStatus.NENHUM;
     }
 
     public Pokemon(EEspecie especie, int nivel){
@@ -56,6 +60,10 @@ public class Pokemon implements MItemList {
         return experiencia;
     }
 
+    public EStatus getStatus() {
+        return status;
+    }
+
     public boolean isEvolui() {
         return evolui;
     }
@@ -66,6 +74,14 @@ public class Pokemon implements MItemList {
 
     public void setNome(String nome){
         this.nome = nome;
+    }
+
+    public void setComProfessor(boolean comProfessor){
+        this.comProfessor = comProfessor;
+    }
+
+    public void setStatus(EStatus status) {
+        this.status = status;
     }
 
     public void evoluir() {
@@ -100,5 +116,31 @@ public class Pokemon implements MItemList {
 
     public int getHpAtual() {
         return this.hpAtual;
+    }
+
+    public boolean comProfessor() {
+        return this.comProfessor;
+    }
+
+    public void addDano(int dano) {
+        if(dano < this.hpAtual){
+            this.hpAtual -= dano;
+        }
+        else {
+            this.hpAtual = 0;
+            this.setStatus(EStatus.ABATIDO);
+        }
+    }
+
+    public void setHpAtual(int hpAtual) {
+        if(hpAtual > this.getHpTotal()){
+            this.hpAtual = this.getHpTotal();
+        }
+        else if (hpAtual < 0){
+            this.hpAtual = 0;
+        }
+        else {
+            this.hpAtual = hpAtual;
+        }
     }
 }
