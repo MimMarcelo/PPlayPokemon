@@ -19,15 +19,11 @@ public class Batalha {
     }
 
     public void aplicarAtaque(int dano, EStatus status, Pokemon pAlvo){
-        if(dano < pAlvo.getHpAtual()){
-            pAlvo.addDano(dano);
+        pAlvo.addDano(dano);
+        if(pAlvo.getStatus() != EStatus.ABATIDO){
             if(random.nextInt(2) < 1){
                 pAlvo.setStatus(status);
             }
-        }
-        else {
-            pAlvo.setHpAtual(0);
-            pAlvo.setStatus(EStatus.ABATIDO);
         }
     }
 }
