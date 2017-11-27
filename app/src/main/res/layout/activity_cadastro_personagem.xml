@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mimmarcelo.pplaypokemon.CadastroPersonagemActivity">
+
+    <view
+        android:id="@+id/itvMac"
+        class="com.mimmarcelo.componentes.MInputText"
+        layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:mHabilitado="false"
+        app:mLabel="MAC:" />
+
+    <view
+        android:id="@+id/itvNome"
+        class="com.mimmarcelo.componentes.MInputText"
+        layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:mLabel="Nome:"
+        app:mPlaceholder="ex: Marcelo Jr" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/da_camera"
+        android:onClick="getFoto"/>
+
+    <ImageView
+        android:id="@+id/imgPersonagem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/icon_personagem" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:onClick="btnCadastrarAction"
+        android:text="@string/cadastrar" />
+
+</LinearLayout>

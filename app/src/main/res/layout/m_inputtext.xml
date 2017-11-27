@@ -20,6 +20,5 @@
         android:gravity="center_vertical"
         android:labelFor="@+id/edtInputText"
         android:paddingStart="@dimen/label_padding_left"
-        android:paddingTop="@dimen/label_padding_top"
-        android:text="hello" />
+        android:paddingTop="@dimen/label_padding_top" />
 </RelativeLayout>

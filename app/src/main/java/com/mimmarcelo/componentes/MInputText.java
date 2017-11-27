@@ -67,6 +67,9 @@ public class MInputText extends LinearLayout {
         if(a.getBoolean(R.styleable.MInputText_mSenha, false)){
             edtInputText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
+        if(!a.getBoolean(R.styleable.MInputText_mHabilitado, true)){
+            edtInputText.setEnabled(false);
+        }
 
         edtInputText.setOnFocusChangeListener(edtChangeListener);
 

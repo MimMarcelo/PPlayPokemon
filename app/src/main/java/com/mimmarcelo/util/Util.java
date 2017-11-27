@@ -1,5 +1,8 @@
 package com.mimmarcelo.util;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import com.mimmarcelo.pplaypokemon.R;
 
 import java.lang.reflect.Field;
@@ -25,4 +28,9 @@ public abstract class Util {
 	        return -1;
 	    }
 	}
+
+	public static void alerta(Context context, String mensagem) {
+		Toast.makeText(context, mensagem, Toast.LENGTH_SHORT).show();
+	}
+
 }

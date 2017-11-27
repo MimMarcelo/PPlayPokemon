@@ -2,4 +2,6 @@
     <string name="app_name">PPlay Pokémon</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="da_camera">Da Câmera</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>

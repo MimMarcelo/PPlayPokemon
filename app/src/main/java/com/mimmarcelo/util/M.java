@@ -23,4 +23,13 @@ public abstract class M {
         public static final int ALVO = 1;
         public static final int SI = 2;
     }
+
+    public final class codigoDeRequisicao{
+        public static final int CAPTURA_DE_FOTO = 1;
+        public static final int TELA_CADASTRO = 2;
+    }
+
+    public final class Extra {
+        public static final String MENSAGEM = "mensagem";
+    }
 }
