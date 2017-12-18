@@ -1,7 +1,7 @@
 package com.mimmarcelo.pplaypokemon;
 
-import com.mimmarcelo.classes.EEspecie;
-import com.mimmarcelo.classes.ETipo;
+import com.mimmarcelo.pplaypokemon.classes.EEspecie;
+import com.mimmarcelo.pplaypokemon.classes.ETipo;
 
 import org.junit.Test;
 
@@ -17,10 +17,10 @@ import static org.junit.Assert.assertTrue;
  */
 public class Tipo {
 
-    com.mimmarcelo.classes.ETipo p1;
+    ETipo p1;
 
     public Tipo(){
-        p1 = com.mimmarcelo.classes.ETipo.AGUA;
+        p1 = ETipo.AGUA;
     }
     @Test
     public void vantagens() {

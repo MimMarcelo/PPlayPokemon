@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <view
+            android:id="@+id/itvMac"
+            class="com.mimmarcelo.pplaypokemon.componentes.MInputText"
+            layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mHabilitado="false"
+            app:mLabel="MAC:" />
+
+        <view
+            android:id="@+id/itvNome"
+            class="com.mimmarcelo.pplaypokemon.componentes.MInputText"
+            layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            app:mLabel="Nome:"
+            app:mPlaceholder="ex: Marcelo Jr" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnCamera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/da_camera" />
+
+                <Button
+                    android:id="@+id/btnDaGaleria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/da_galeria" />
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPersonagem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/imagem_grande"
+                android:layout_weight="1"
+                android:src="@mipmap/icon_personagem" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/widget_margin"
+        android:text="@string/cadastrar" />
+
+</RelativeLayout>

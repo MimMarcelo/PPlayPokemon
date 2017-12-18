@@ -1,55 +1,82 @@
 package com.mimmarcelo.pplaypokemon;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ExpandableListView;
-import android.widget.ListView;
-import android.widget.Spinner;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
-import com.mimmarcelo.classes.ETipo;
-import com.mimmarcelo.componentes.MItemList;
-import com.mimmarcelo.componentes.MListAdapter;
-import com.mimmarcelo.componentes.MListExpandableAdapter;
-import com.mimmarcelo.componentes.MInputText;
+import com.mimmarcelo.pplaypokemon.classes.Personagem;
+import com.mimmarcelo.pplaypokemon.util.M;
+import com.mimmarcelo.pplaypokemon.util.Util;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
-    MInputText nome;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    Personagem personagem;
+
+    CircleImageView btnPersonagem;
+    TextView txtNomePersonagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nome = (MInputText)findViewById(R.id.itxNome);
-        ListView lstPokemons = (ListView)findViewById(R.id.lstPokemons);
-        Spinner spnPokemons = (Spinner)findViewById(R.id.spnPokemons);
-        ExpandableListView elsPokemons = (ExpandableListView)findViewById(R.id.elsPokemons);
+        txtNomePersonagem = (TextView)findViewById(R.id.txtNomePersonagem);
+        btnPersonagem = (CircleImageView)findViewById(R.id.btnPersonagem);
 
+        txtNomePersonagem.setOnClickListener(this);
+        btnPersonagem.setOnClickListener(this);
 
-        ETipo.values();
-        ArrayList<MItemList> pokemons1 = new ArrayList<>();
-        Collections.addAll(pokemons1, ETipo.values());
-//        pokemons1.add(new Pokemon(EEspecie.BULBASAUR));
-//        pokemons1.add(new Pokemon(EEspecie.IVYSAUR));
-//        pokemons1.add(new Pokemon(EEspecie.VENOSAUR));
+        ImageButton imb = (ImageButton)findViewById(R.id.btnPokemons);
+        imb.setOnClickListener(this);
 
-        MListAdapter adapter = new MListAdapter(this, pokemons1);
-        lstPokemons.setAdapter(adapter);
-        spnPokemons.setAdapter(adapter);
+        personagem = Personagem.carregarDados(this);
 
-        ArrayList<MItemList> pokemons2 = new ArrayList<>();
-//        pokemons2.add(new Pokemon(EEspecie.CHARMANDER));
-//        pokemons2.add(new Pokemon(EEspecie.CHARMILION));
-//        pokemons2.add(new Pokemon(EEspecie.CHARIZARD));
+        if(personagem == null){
+            irTelaCadastro(getString(R.string.cadastrar));
+        }
+        else {
+            carregarPersonagem();
+        }
+    }
 
-        //Map<MItemList, ArrayList<MItemList>> dados = new HashMap<>();
-//        dados.put(new Pokemon(EEspecie.VENOSAUR), pokemons1);
-//        dados.put(new Pokemon(EEspecie.CHARIZARD), pokemons2);
-        //elsPokemons.setAdapter(new MListExpandableAdapter(this, dados));
+    private void irTelaCadastro(String mensagem){
+        Intent intent = new Intent(this, CadastroPersonagemActivity.class);
+
+        intent.putExtra(M.Extra.MENSAGEM, mensagem);
+        startActivityForResult(intent, M.codigoDeRequisicao.TELA_CADASTRO);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == M.codigoDeRequisicao.TELA_CADASTRO){
+            if(resultCode == RESULT_OK){
+                personagem = Personagem.carregarDados(this);
+                carregarPersonagem();
+                Util.alerta(this, personagem.getNome()+" cadastrado com sucesso!");
+            }
+        }
+    }
+
+    private void carregarPersonagem(){
+        txtNomePersonagem.setText(personagem.getNome());
+        btnPersonagem.setImageBitmap(Util.getImagemLocal(personagem.getNomeImagem()));
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnPersonagem:
+            case R.id.txtNomePersonagem:
+                irTelaCadastro("");
+                break;
+            case R.id.btnPokemons:
+                Intent i = new Intent(this, BolsaPokemonActivity.class);
+                startActivity(i);
+        }
     }
 }

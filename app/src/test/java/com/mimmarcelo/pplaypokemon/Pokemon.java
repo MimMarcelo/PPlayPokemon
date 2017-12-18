@@ -1,6 +1,6 @@
 package com.mimmarcelo.pplaypokemon;
 
-import com.mimmarcelo.classes.EEspecie;
+import com.mimmarcelo.pplaypokemon.classes.EEspecie;
 
 import org.junit.Test;
 
@@ -13,16 +13,16 @@ import static org.junit.Assert.*;
  */
 public class Pokemon {
 
-    com.mimmarcelo.classes.Pokemon p1;
-    com.mimmarcelo.classes.Pokemon p2;
-    com.mimmarcelo.classes.Pokemon p3;
-    com.mimmarcelo.classes.Pokemon p4;
+    com.mimmarcelo.pplaypokemon.classes.Pokemon p1;
+    com.mimmarcelo.pplaypokemon.classes.Pokemon p2;
+    com.mimmarcelo.pplaypokemon.classes.Pokemon p3;
+    com.mimmarcelo.pplaypokemon.classes.Pokemon p4;
 
     public Pokemon(){
-        p1 = new com.mimmarcelo.classes.Pokemon(EEspecie.ABRA, 5);
-        p2 = new com.mimmarcelo.classes.Pokemon(EEspecie.DRAGONITE, 36);
-        p3 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE, 8);
-        p4 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE, 6);
+        p1 = new com.mimmarcelo.pplaypokemon.classes.Pokemon(EEspecie.ABRA, 5);
+        p2 = new com.mimmarcelo.pplaypokemon.classes.Pokemon(EEspecie.DRAGONITE, 36);
+        p3 = new com.mimmarcelo.pplaypokemon.classes.Pokemon(EEspecie.EEVEE, 8);
+        p4 = new com.mimmarcelo.pplaypokemon.classes.Pokemon(EEspecie.EEVEE, 6);
     }
 
     @Test

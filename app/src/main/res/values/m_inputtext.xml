@@ -4,5 +4,6 @@
         <attr name="mPlaceholder" format="string" />
         <attr name="mValor" format="string" />
         <attr name="mSenha" format="boolean" />
+        <attr name="mHabilitado" format="boolean" />
     </declare-styleable>
 </resources>

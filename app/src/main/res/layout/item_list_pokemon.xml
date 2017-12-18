@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/corPadrao"
+    android:padding="@dimen/grid_margin">
+
+    <ImageView
+        android:id="@+id/imgPokemon"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imgPokemon"
+        android:layout_centerHorizontal="true"
+        android:text="@null"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/txtNivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtNome"
+        android:text="@null"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/txtTipos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtNivel"
+        android:layout_centerHorizontal="true"
+        android:text="@null"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/txtHpMp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtTipos"
+        android:layout_centerHorizontal="true"
+        android:text="@null"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

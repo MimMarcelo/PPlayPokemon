@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.mimmarcelo.pplaypokemon.MainActivity">
 
-    <view
-        android:id="@+id/itxNome"
-        class="com.mimmarcelo.componentes.MInputText"
-        id="@+id/view2"
-        layout_weight="1"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/btnBluetooth"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="@dimen/widget_margin"
+        android:layout_marginTop="@dimen/widget_margin"
+        android:background="@mipmap/icon_bluetooth" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/btnPersonagem"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="@dimen/widget_margin"
+        android:layout_marginStart="@dimen/widget_margin"
+        android:src="@mipmap/icon_personagem" />
+
+    <ImageButton
+        android:id="@+id/btnPokemons"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/widget_margin"
+        android:background="@mipmap/icon_pokebola" />
+
+    <ImageButton
+        android:id="@+id/btnBatalhar"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/widget_margin"
+        android:layout_marginEnd="@dimen/widget_margin"
+        android:background="@mipmap/icon_luta" />
+
+    <TextView
+        android:id="@+id/txtNomePersonagem"
+        android:layout_width="@dimen/imagem_padrao"
         android:layout_height="wrap_content"
-        app:mLabel="Nome"
-        app:mPlaceholder="Informe seu nome" />
+        android:layout_alignBottom="@+id/btnPersonagem"
+        android:layout_alignStart="@+id/btnPersonagem"
+        android:gravity="center_horizontal"
+        android:text="@null"
+        android:textStyle="bold" />
 
-    <view
-        android:id="@+id/itxSenha"
-        class="com.mimmarcelo.componentes.MInputText"
-        id="@+id/view4"
-        layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:mLabel="Senha"
-        app:mPlaceholder="Informe sua senha"
-        app:mSenha="true" />
-
-    <Spinner
-        android:id="@+id/spnPokemons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ListView
-        android:id="@+id/lstPokemons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ExpandableListView
-        android:id="@+id/elsPokemons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+</RelativeLayout>

@@ -5,7 +5,7 @@
     <color name="corPadraoTransparente">#6F000000</color>
 
     <color name="corPadraoInverso">#FFFFFF</color>
-    <color name="corPadraoClaraInverso">#CFCFDF</color>
+    <color name="corPadraoClaraInverso">#cfcfdf</color>
 
     <color name="colorPrimary">#00005F</color>
     <color name="colorPrimaryDark">#00003F</color>
