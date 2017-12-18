@@ -1,4 +1,4 @@
-package com.mimmarcelo.classes;
+package com.mimmarcelo.pplaypokemon.classes;
 
 import java.util.ArrayList;
 
@@ -208,8 +208,16 @@ public enum EEspecie {
         return this.forca;
     }
 
+    public int getPoder() {
+        return poder;
+    }
+
     public int getResistencia() {
         return this.resistencia;
+    }
+
+    public int getProtecao() {
+        return protecao;
     }
 
     public int getVelocidade() {

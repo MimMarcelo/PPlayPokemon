@@ -1,4 +1,4 @@
-package com.mimmarcelo.componentes;
+package com.mimmarcelo.pplaypokemon.componentes;
 
 import android.widget.ImageView;
 import android.widget.TextView;

@@ -1,6 +1,6 @@
-package com.mimmarcelo.classes;
+package com.mimmarcelo.pplaypokemon.classes;
 
-import com.mimmarcelo.componentes.MItemList;
+import com.mimmarcelo.pplaypokemon.componentes.MItemList;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public enum ETipo implements MItemList{
     }
 
     @Override
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -56,11 +56,11 @@ public enum ETipo implements MItemList{
     public double getVantagem(ArrayList<ETipo> tipos){
         double vantagem = 0;
         if(tipos.size() == 1){
-            vantagem = this.vantagens.get(tipos.get(0).getId()-1);
+            vantagem = this.vantagens.get((int)tipos.get(0).getId()-1);
         }
         else if(tipos.size() > 1){
-            double vantagem1 = this.vantagens.get(tipos.get(0).getId()-1);
-            double vantagem2 = this.vantagens.get(tipos.get(1).getId()-1);
+            double vantagem1 = this.vantagens.get((int)tipos.get(0).getId()-1);
+            double vantagem2 = this.vantagens.get((int)tipos.get(1).getId()-1);
             if(vantagem1 > 1 && vantagem2 > 1){
                 vantagem = vantagem1>vantagem2?vantagem1:vantagem2;
                 vantagem += 0.1;
@@ -70,7 +70,7 @@ public enum ETipo implements MItemList{
                 vantagem -= 0.1;
             }
             else {
-                vantagem = (this.vantagens.get(tipos.get(0).getId() - 1) + this.vantagens.get(tipos.get(1).getId() - 1)) / 2;
+                vantagem = (this.vantagens.get((int)tipos.get(0).getId() - 1) + this.vantagens.get((int)tipos.get(1).getId() - 1)) / 2;
             }
         }
 

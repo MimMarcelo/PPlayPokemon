@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mimmarcelo.pplaypokemon">
 
-    <uses-feature android:name="android.hardware.camera2" android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -19,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroPersonagemActivity"></activity>
+        <activity android:name=".CadastroPersonagemActivity" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.pplaypokemon.fileprovider"
@@ -29,6 +33,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <activity android:name=".BolsaPokemonActivity"></activity>
     </application>
 
 </manifest>

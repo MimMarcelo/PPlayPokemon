@@ -1,4 +1,4 @@
-package com.mimmarcelo.util;
+package com.mimmarcelo.pplaypokemon.util;
 
 /**
  * Created by Marcelo Júnior on 23-Nov-17.
@@ -27,6 +27,7 @@ public abstract class M {
     public final class codigoDeRequisicao{
         public static final int CAPTURA_DE_FOTO = 1;
         public static final int TELA_CADASTRO = 2;
+        public static final int SELECIONAR_FOTO = 3;
     }
 
     public final class Extra {

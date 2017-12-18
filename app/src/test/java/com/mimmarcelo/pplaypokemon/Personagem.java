@@ -1,7 +1,8 @@
 package com.mimmarcelo.pplaypokemon;
 
 import com.mimmarcelo.classes.*;
-import com.mimmarcelo.classes.Pokemon;
+import com.mimmarcelo.pplaypokemon.classes.EEspecie;
+import com.mimmarcelo.pplaypokemon.classes.Pokemon;
 
 import org.junit.Test;
 
@@ -14,18 +15,18 @@ import static org.junit.Assert.*;
  */
 public class Personagem {
 
-    com.mimmarcelo.classes.Personagem personagem1;
+    com.mimmarcelo.pplaypokemon.classes.Personagem personagem1;
 
     public Personagem(){
-        personagem1 = new com.mimmarcelo.classes.Personagem();
+        personagem1 = new com.mimmarcelo.pplaypokemon.classes.Personagem();
 
-        com.mimmarcelo.classes.Pokemon p1 = new com.mimmarcelo.classes.Pokemon(EEspecie.ABRA, 5);
-        com.mimmarcelo.classes.Pokemon p2 = new com.mimmarcelo.classes.Pokemon(EEspecie.DRAGONITE, 36);
-        com.mimmarcelo.classes.Pokemon p3 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE, 8);
-        com.mimmarcelo.classes.Pokemon p4 = new com.mimmarcelo.classes.Pokemon(EEspecie.EEVEE, 6);
-        com.mimmarcelo.classes.Pokemon p5 = new com.mimmarcelo.classes.Pokemon(EEspecie.SQUIRTLE, 36);
-        com.mimmarcelo.classes.Pokemon p6 = new com.mimmarcelo.classes.Pokemon(EEspecie.KOFFING, 8);
-        com.mimmarcelo.classes.Pokemon p7 = new com.mimmarcelo.classes.Pokemon(EEspecie.ODDISH, 6);
+        Pokemon p1 = new Pokemon(EEspecie.ABRA, 5);
+        Pokemon p2 = new Pokemon(EEspecie.DRAGONITE, 36);
+        Pokemon p3 = new Pokemon(EEspecie.EEVEE, 8);
+        Pokemon p4 = new Pokemon(EEspecie.EEVEE, 6);
+        Pokemon p5 = new Pokemon(EEspecie.SQUIRTLE, 36);
+        Pokemon p6 = new Pokemon(EEspecie.KOFFING, 8);
+        Pokemon p7 = new Pokemon(EEspecie.ODDISH, 6);
 
         personagem1.addPokemon(p1);
         personagem1.addPokemon(p2);

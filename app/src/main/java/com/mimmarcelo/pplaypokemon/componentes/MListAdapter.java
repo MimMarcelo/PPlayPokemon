@@ -1,4 +1,4 @@
-package com.mimmarcelo.componentes;
+package com.mimmarcelo.pplaypokemon.componentes;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mimmarcelo.pplaypokemon.R;
-import com.mimmarcelo.util.Util;
+import com.mimmarcelo.pplaypokemon.util.Util;
 
 import java.util.ArrayList;
 

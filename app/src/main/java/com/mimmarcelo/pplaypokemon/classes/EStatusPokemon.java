@@ -1,12 +1,10 @@
-package com.mimmarcelo.classes;
-
-import com.mimmarcelo.util.M;
+package com.mimmarcelo.pplaypokemon.classes;
 
 /**
  * Created by Marcelo Júnior on 23-Nov-17.
  */
 
-public enum EStatus {
+public enum EStatusPokemon {
 
     NENHUM(0, "Normal" , "O pokémon não está sob nenhum status"),
     QUEIMADO(1, "Queimado", "Queimaduras causam dano ao pokémon"),
@@ -31,7 +29,7 @@ public enum EStatus {
     private String nome;
     private String descricao;
 
-    EStatus(int id, String nome, String descricao) {
+    EStatusPokemon(int id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;

@@ -1,4 +1,4 @@
-package com.mimmarcelo.classes;
+package com.mimmarcelo.pplaypokemon.classes;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,11 +18,11 @@ public class Batalha {
         random = new Random();
     }
 
-    public void aplicarAtaque(int dano, EStatus status, Pokemon pAlvo){
+    public void aplicarAtaque(int dano, EStatusPokemon status, Pokemon pAlvo){
         pAlvo.addDano(dano);
-        if(pAlvo.getStatus() != EStatus.ABATIDO){
+        if(pAlvo.getStatusPokemon() != EStatusPokemon.ABATIDO){
             if(random.nextInt(2) < 1){
-                pAlvo.setStatus(status);
+                pAlvo.setStatusPokemon(status);
             }
         }
     }

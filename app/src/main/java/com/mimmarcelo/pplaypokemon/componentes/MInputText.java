@@ -1,4 +1,4 @@
-package com.mimmarcelo.componentes;
+package com.mimmarcelo.pplaypokemon.componentes;
 
 import android.content.Context;
 import android.content.res.TypedArray;
