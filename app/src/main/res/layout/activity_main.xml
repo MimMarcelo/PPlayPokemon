@@ -14,7 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="@dimen/widget_margin"
         android:layout_marginTop="@dimen/widget_margin"
-        android:background="@mipmap/icon_bluetooth" />
+        android:background="@mipmap/icon_bluetooth"
+        android:foreground="?android:attr/selectableItemBackground" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/btnPersonagem"
@@ -24,26 +25,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="@dimen/widget_margin"
         android:layout_marginStart="@dimen/widget_margin"
-        android:src="@mipmap/icon_personagem" />
-
-    <ImageButton
-        android:id="@+id/btnPokemons"
-        android:layout_width="@dimen/imagem_padrao"
-        android:layout_height="@dimen/imagem_padrao"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/widget_margin"
-        android:background="@mipmap/icon_pokebola" />
-
-    <ImageButton
-        android:id="@+id/btnBatalhar"
-        android:layout_width="@dimen/imagem_padrao"
-        android:layout_height="@dimen/imagem_padrao"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="@dimen/widget_margin"
-        android:layout_marginEnd="@dimen/widget_margin"
-        android:background="@mipmap/icon_luta" />
+        android:src="@mipmap/icon_personagem"
+        android:foreground="?android:attr/selectableItemBackground" />
 
     <TextView
         android:id="@+id/txtNomePersonagem"
@@ -54,5 +37,26 @@
         android:gravity="center_horizontal"
         android:text="@null"
         android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/btnPokemons"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/widget_margin"
+        android:background="@mipmap/icon_pokebola"
+        android:foreground="?android:attr/selectableItemBackground" />
+
+    <ImageButton
+        android:id="@+id/btnBatalhar"
+        android:layout_width="@dimen/imagem_padrao"
+        android:layout_height="@dimen/imagem_padrao"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/widget_margin"
+        android:layout_marginEnd="@dimen/widget_margin"
+        android:background="@mipmap/icon_luta"
+        android:foreground="?android:attr/selectableItemBackground" />
 
 </RelativeLayout>

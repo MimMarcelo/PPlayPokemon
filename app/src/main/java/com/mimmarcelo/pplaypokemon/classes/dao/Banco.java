@@ -124,6 +124,9 @@ public class Banco extends SQLiteOpenHelper {
             if(valor[i] instanceof String) {
                 cv.put(campo[i], (String)valor[i]);
             }
+            else if(valor[i] instanceof Integer){
+                cv.put(campo[i], (Integer) valor[i]);
+            }
             else if(valor[i] instanceof Long){
                 cv.put(campo[i], (Long)valor[i]);
             }

@@ -5,4 +5,6 @@
     <string name="da_camera">Da Câmera</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="da_galeria">Da Galeria</string>
+    <string name="especie">Especie</string>
+    <string name="nome">Nome</string>
 </resources>

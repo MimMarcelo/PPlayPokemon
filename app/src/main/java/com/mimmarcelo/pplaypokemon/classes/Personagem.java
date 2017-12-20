@@ -95,8 +95,12 @@ public class Personagem implements MItemList {
         return pokemons;
     }
 
-    public void setPokemons(ArrayList<Pokemon> pokemons) {
-        this.pokemons = pokemons;
+    public void setPokemons(List<Pokemon> pokemons) {
+        if(pokemons != null) {
+            for(Pokemon p: pokemons) {
+                addPokemon(p);
+            }
+        }
     }
 
     public int getNPokemonsComPersonagem(){
@@ -110,6 +114,7 @@ public class Personagem implements MItemList {
     }
 
     public void addPokemon(Pokemon p){
+        p.setIdPersonagem(this.getId());
         p.setComProfessor(this.getNPokemonsComPersonagem() >= 6? true:false);
         this.pokemons.add(p);
     }
@@ -119,7 +124,9 @@ public class Personagem implements MItemList {
     public static Personagem carregarDados(Context context){
         List<Personagem> aux = PersonagemDao.buscar(context, PersonagemDao.ID+"=?", new String[]{"1"});
         if(aux.size() > 0){
-            return  aux.get(0);
+            Personagem personagem = aux.get(0);
+            personagem.setPokemons(Pokemon.buscar(context, "idPersonagem=?", new String[]{String.valueOf(personagem.getId())}));
+            return  personagem;
         }
         return null;
     }

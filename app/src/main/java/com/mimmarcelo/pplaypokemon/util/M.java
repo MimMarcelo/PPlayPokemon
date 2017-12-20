@@ -32,5 +32,6 @@ public abstract class M {
 
     public final class Extra {
         public static final String MENSAGEM = "mensagem";
+        public static final String ID_PERSONAGEM = "idPersonagem";
     }
 }

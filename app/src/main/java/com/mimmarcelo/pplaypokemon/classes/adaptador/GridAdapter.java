@@ -1,6 +1,8 @@
 package com.mimmarcelo.pplaypokemon.classes.adaptador;
 
 import android.content.Context;
+import android.support.v4.view.ViewCompat;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,24 +31,20 @@ public class GridAdapter extends ArrayAdapter<Pokemon> {
         ListHolder holder;
         if (v == null){
             v = LayoutInflater.from(getContext()).inflate(R.layout.item_list_pokemon, null);
+
             holder = new ListHolder();
             holder.imgPokemon = (ImageView)v.findViewById(R.id.imgPokemon);
+            holder.imgProf = (ImageView)v.findViewById(R.id.imgProfCarvalho);
             holder.txtNome = (TextView)v.findViewById(R.id.txtNome);
-            holder.txtTipos = (TextView)v.findViewById(R.id.txtTipos);
-            holder.txtNivel = (TextView)v.findViewById(R.id.txtNivel);
-            holder.txtHpMp = (TextView)v.findViewById(R.id.txtHpMp);
 
             v.setTag(holder);
         }
         else{
             holder = (ListHolder)v.getTag();
         }
-        //Picasso.with(getContext()).load("https://static.zerochan.net/Ninetales.full.1666188.jpg").into(holder.imgPokemon);
         holder.imgPokemon.setImageResource(Util.getResourceByString(pokemon.getNomeImagem(), R.mipmap.class));
         holder.txtNome.setText(pokemon.getNome());
-        holder.txtNivel.setText(String.valueOf(pokemon.getNivel()));
-        holder.txtTipos.setText("FALTA");
-        holder.txtHpMp.setText("FALTA");
+        holder.imgProf.setVisibility(pokemon.isComProfessor()?View.VISIBLE:View.GONE);
         return v;
     }
 

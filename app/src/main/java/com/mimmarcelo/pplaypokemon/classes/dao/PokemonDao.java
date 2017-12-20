@@ -41,16 +41,16 @@ public class PokemonDao {
         if(pokemon.getIdServidor() == 0) {
             valor = new Object[]{pokemon.getIdPersonagem(), pokemon.getNivel(), pokemon.getExperiencia(), pokemon.getHpAtual(),
                     pokemon.getMpAtual(), pokemon.isEvolui(), pokemon.isComProfessor(), pokemon.getNome(),
-                    pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
+                    pokemon.getEspecie().toString(), pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
             campo = new String[]{ID_PERSONAGEM, NIVEL, EXPERIENCIA, HP_ATUAL, MP_ATUAL, EVOLUI, COM_PROFESSOR,
-                    NOME, STATUS_POKEMON, STATUS};
+                    NOME, ESPECIE, STATUS_POKEMON, STATUS};
         }
         else {
             valor = new Object[]{pokemon.getIdServidor(), pokemon.getIdPersonagem(), pokemon.getNivel(), pokemon.getExperiencia(),
                     pokemon.getHpAtual(), pokemon.getMpAtual(), pokemon.isEvolui(), pokemon.isComProfessor(),
-                    pokemon.getNome(), pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
+                    pokemon.getNome(), pokemon.getEspecie().toString(), pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
             campo = new String[]{ID_SERVIDOR, ID_PERSONAGEM, NIVEL, EXPERIENCIA, HP_ATUAL, MP_ATUAL, EVOLUI,
-                    COM_PROFESSOR, NOME, STATUS_POKEMON, STATUS};
+                    COM_PROFESSOR, NOME, ESPECIE, STATUS_POKEMON, STATUS};
         }
 
         Banco bd = new Banco(context);
@@ -77,16 +77,16 @@ public class PokemonDao {
             if(pokemon.getIdServidor() == 0) {
                 valor = new Object[]{pokemon.getIdPersonagem(), pokemon.getNivel(), pokemon.getExperiencia(), pokemon.getHpAtual(),
                         pokemon.getMpAtual(), pokemon.isEvolui(), pokemon.isComProfessor(), pokemon.getNome(),
-                        pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
+                        pokemon.getEspecie().toString(), pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
                 campo = new String[]{ID_PERSONAGEM, NIVEL, EXPERIENCIA, HP_ATUAL, MP_ATUAL, EVOLUI, COM_PROFESSOR,
-                        NOME, STATUS_POKEMON, STATUS};
+                        NOME, ESPECIE, STATUS_POKEMON, STATUS};
             }
             else {
                 valor = new Object[]{pokemon.getIdServidor(), pokemon.getIdPersonagem(), pokemon.getNivel(), pokemon.getExperiencia(),
                         pokemon.getHpAtual(), pokemon.getMpAtual(), pokemon.isEvolui(), pokemon.isComProfessor(),
-                        pokemon.getNome(), pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
+                        pokemon.getNome(), pokemon.getEspecie().toString(), pokemon.getStatusPokemon().toString(), pokemon.getStatus().toString()};
                 campo = new String[]{ID_SERVIDOR, ID_PERSONAGEM, NIVEL, EXPERIENCIA, HP_ATUAL, MP_ATUAL, EVOLUI,
-                        COM_PROFESSOR, NOME, STATUS_POKEMON, STATUS};
+                        COM_PROFESSOR, NOME, ESPECIE, STATUS_POKEMON, STATUS};
             }
 
             Banco bd = new Banco(context);
@@ -122,8 +122,20 @@ public class PokemonDao {
         List<Pokemon> pokemons = new ArrayList<>();
 
         try{
-            Cursor cursor = bd.buscar(TABELA, new String[]{ID, ID_PERSONAGEM, ID_SERVIDOR, NIVEL, EXPERIENCIA, HP_ATUAL, MP_ATUAL, EVOLUI,
-                    COM_PROFESSOR, NOME, STATUS_POKEMON, STATUS}, where, argumento, groupBy, having, COM_PROFESSOR+" desc");
+            Cursor cursor = bd.buscar(TABELA, new String[]{
+                    ID,
+                    ID_PERSONAGEM,
+                    ID_SERVIDOR,
+                    NIVEL,
+                    EXPERIENCIA,
+                    HP_ATUAL,
+                    MP_ATUAL,
+                    EVOLUI,
+                    COM_PROFESSOR,
+                    NOME,
+                    ESPECIE,
+                    STATUS_POKEMON,
+                    STATUS}, where, argumento, groupBy, having, orderBy);
 
             while(!cursor.isAfterLast()){
 

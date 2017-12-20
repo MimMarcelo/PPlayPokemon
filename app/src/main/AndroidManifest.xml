@@ -34,7 +34,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".BolsaPokemonActivity"></activity>
+        <activity android:name=".BolsaPokemonActivity" />
+        <activity android:name=".DetalhePokemonActivity"></activity>
     </application>
 
 </manifest>

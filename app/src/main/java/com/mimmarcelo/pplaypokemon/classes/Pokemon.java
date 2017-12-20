@@ -153,7 +153,7 @@ public class Pokemon implements MItemList {
 
     @Override
     public String getNome() {
-        return this.nome.isEmpty()? this.especie.getNome(): (this.nome+" ("+this.especie.getNome()+")");
+        return this.nome.isEmpty()? this.especie.getNome(): this.nome;
     }
 
     public void setNome(String nome) {
@@ -232,7 +232,15 @@ public class Pokemon implements MItemList {
         }
     }
 
+    //-------------------------------MÉTODOS COM ACESSO AO BANCO DE DADOS LOCAL
     public static List<Pokemon> buscar(Context context, String where, String[] argumento){
-        return PokemonDao.buscar(context, where, argumento);
+        return buscar(context, where, argumento, null);
+    }
+    public static List<Pokemon> buscar(Context context, String where, String[] argumento, String orderBy){
+        return PokemonDao.buscar(context, where, argumento, null, null, orderBy);
+    }
+
+    public boolean salvar(Context context){
+        return PokemonDao.salvar(context, this);
     }
 }

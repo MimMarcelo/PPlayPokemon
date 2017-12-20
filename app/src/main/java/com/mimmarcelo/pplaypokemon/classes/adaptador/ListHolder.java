@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 public class ListHolder {
     ImageView imgPokemon;
+    ImageView imgProf;
     TextView txtNome;
-    TextView txtNivel;
-    TextView txtTipos;
-    TextView txtHpMp;
 }

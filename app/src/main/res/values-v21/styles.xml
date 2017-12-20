@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/corPadrao</item>
+        <item name="colorPrimaryDark">@color/corPadraoClara</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/corPadrao</item>
+
+        <item name="android:textViewStyle">@style/label</item>
+        <item name="editTextStyle">@style/campoDeTexto</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+    </style>
+    <style name="label" parent="android:TextAppearance.Widget.TextView">
+        <item name="android:textColor">@color/corPadraoClaraInverso</item>
+        <item name="android:textSize">@dimen/texto_label_padrao</item>
+    </style>
+    <style name="campoDeTexto" parent="android:Widget.EditText">
+        <item name="android:textColorHint">@color/corPadraoClaraInverso</item>
+        <item name="android:textColor">@color/corPadraoInverso</item>
+        <item name="android:textSize">@dimen/texto_padrao</item>
+    </style>
+</resources>

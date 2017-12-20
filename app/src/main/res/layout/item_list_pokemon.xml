@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/corPadrao"
+    android:foreground="?android:attr/selectableItemBackground"
     android:padding="@dimen/grid_margin">
 
     <ImageView
@@ -18,36 +20,16 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imgPokemon"
         android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         android:text="@null"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/txtNivel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtNome"
-        android:text="@null"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/txtTipos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtNivel"
-        android:layout_centerHorizontal="true"
-        android:text="@null"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/txtHpMp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTipos"
-        android:layout_centerHorizontal="true"
-        android:text="@null"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <ImageView
+        android:id="@+id/imgProfCarvalho"
+        android:layout_width="@dimen/imagem_pequena"
+        android:layout_height="@dimen/imagem_pequena"
+        android:layout_above="@+id/txtNome"
+        android:layout_alignEnd="@+id/imgPokemon"
+        app:srcCompat="@mipmap/professor_carvalho" />
 
 </RelativeLayout>
