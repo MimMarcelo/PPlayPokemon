@@ -16,7 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Personagem personagem;
-
+//Teste
     CircleImageView btnPersonagem;
     TextView txtNomePersonagem;
 
